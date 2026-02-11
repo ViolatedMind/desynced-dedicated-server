@@ -1,0 +1,30 @@
+services:
+  desynced:
+    image: desynced:0.0.3
+    container_name: desynced-server
+    restart: unless-stopped
+    environment:
+      SERVER_NAME: MyServer
+      INSTALL_PATH: /desynced/server
+      WORLD_NAME: World1
+      MAX_PLAYERS: 10
+      VISIBILITY: private
+      RUN_WITHOUT_PLAYERS: false
+      RESOURCE_RICHNESS: 4
+      BLIGHT_THRESHOLD: 0.1
+      PLATEAU_LEVEL: 0.1
+      PEACEFUL_MODE: 2
+    ports:
+      - "10099:10099/udp"
+    volumes:
+      - ./server:/desynced/server
+      - ./cache:/root/.wine
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 512M
+    logging:
+      options:
+        max-size: "5m"
+        max-file: "3"
