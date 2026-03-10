@@ -1,5 +1,5 @@
 ## Summary
-This is dockerized version of [Desynced](https://store.steampowered.com/app/1450900/Desynced/) dedicated server. You can find the built image [here]([https://hub.docker.com/r/renair/desynced](https://hub.docker.com/r/violatedmind/desynced-server)).
+This is dockerized version of [Desynced](https://store.steampowered.com/app/1450900/Desynced/) dedicated server. You can find the built image [here]([https://hub.docker.com/r/violatedmind/desynced-server]).
 
 ## Explanation
 While the server is console application it is yet to create a tray window - thats why I have used xvfb to simulate xserver and wine over wineconsole.
