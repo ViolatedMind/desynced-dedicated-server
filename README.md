@@ -5,7 +5,7 @@ This is dockerized version of [Desynced](https://store.steampowered.com/app/1450
 While the server is console application it is yet to create a tray window - thats why I have used xvfb to simulate xserver and wine over wineconsole.
 
 ## Configuration
-These are the session_settings and game_settings for the server
+These are the session_settings and game_settings for the server.
 
 | Env variable             | Default                    | Values                       | Meaning                                                                    |
 |--------------------------|----------------------------|------------------------------|----------------------------------------------------------------------------|
