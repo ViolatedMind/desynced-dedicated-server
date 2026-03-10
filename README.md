@@ -20,7 +20,7 @@ These are the session_settings and game_settings for the server.
 | BLOCK_UNLOCKED_BEHAVIORS | false                      | true, false                  | Blocks if people can copy in programing                                    |
 | RUN_WITHOUT_PLAYERS      | false                      | true, false                  | Continue game if no one is on the server                                   |
 | DISABLE_CLIENT_SAVE      | false                      | true, false                  | Stop players from locally saving the game                                  |
-| SEED                     | 123                        | xxxxxx                       | Sets the seed use for map generation                                       |
+| SEED                     | 123                        | xxxxxx                       | Sets the seed used for map generation                                      |
 | ELEVATION_FREQ           | 0.8                        | 0.2 - 1.5                    | Biome density                                                              |
 | ELEVATION_SCALE          | 1                          | 0.2 - 1.5                    | Water/plateau density                                                      |
 | BLIGHT_THRESHOLD         | 0.2                        | 0.01 - 0.2                   | Blight Corruption (smaller is more)                                        |
