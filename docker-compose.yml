@@ -1,21 +1,38 @@
 services:
   desynced:
-    image: desynced:0.0.3
+    image: violatedmind/desynced-server/latest
     container_name: desynced-server
     restart: unless-stopped
     environment:
-      SERVER_NAME: MyServer
-      INSTALL_PATH: /desynced/server
-      WORLD_NAME: World1
-      MAX_PLAYERS: 10
-      VISIBILITY: private
-      RUN_WITHOUT_PLAYERS: false
-      RESOURCE_RICHNESS: 4
-      BLIGHT_THRESHOLD: 0.1
-      PLATEAU_LEVEL: 0.1
-      PEACEFUL_MODE: 2
+        INSTALL_PATH: /desynced/server                #Install Location
+        WORLD_NAME: World1                            #Name you want for save file
+        SERVER_NAME: My Server                        #Name you want for the server
+        PASSWORD: secret                              #Password for the server
+        MAX_PLAYERS: 8                                #Number of players (1-16)
+        VISIBILITY: private                           #If you want server on game list (private, public)
+        MODE: Shared/Coop                             #What game mode do you want to play (shared/Coop, Separate/Versus)
+        ALLOW_FACTION_SWITCHING: true                 #Allow faction switching (true, false)
+        BLOCK_UNLOCKED_BEHAVIORS: false               #Block if people can copy in programing (true, false)
+        RUN_WITHOUT_PLAYERS: false                    #Continue game if no one is on the server (true, false)
+        DISABLE_CLIENT_SAVE: false                    #Stop people from locally saving the game (true, false)
+        SEED: 123                                     #The seed used for generation of the map (xxxxxx)
+        ELEVATION_FREQ: 0.8                           #Biome density (0.2 - 1.5)
+        ELEVATION_SCALE: 1                            #Water/plateau density (0.2 - 1.5)
+        BLIGHT_THRESHOLD: 0.2                         #Blight corruption (0.2 - 0.01 (smaller is more))
+        PLATEAU_LEVEL: 0.15                           #Plateau Amount (02. - 0.01 (smaller is more))
+        LANDSCAPE: normal                             #Landscape type (normal, flat)
+        RESOURCE_AMT: 4                               #Amount of resources that spawn (0.5 - 4)
+        RESOURCE_INF: false                           #Unlimited resources (true, false)
+        DAY_NIGHT: true                               #Day night cycle (true, false)
+        DAY_PERIOD: 1000                              #Day lenght (500 - 1500)
+        YEAR_PERIOD: 20                               #Year length (0 - 50)
+        PEACEFUL_MODE: 3                              #Hostility level (0-None, 1-Passive, 2-Aggressive, 3-Swarm)
+        DIFFICULTY: 1                                 #Game Dificulty (0.2 - 4)
+        CREEP: true                                   #Enable bug hive evolution (true, false)
+        DISABLE_MINIGAMES: false                      #Disable minigames (true, false)
     ports:
-      - "10099:10099/udp"
+      - 10099:10099/udp                 #Main game port
+      - 27015:27015                     #Steam query port
     volumes:
       - ./server:/desynced/server
       - ./cache:/root/.wine
@@ -24,7 +41,3 @@ services:
         limits:
           cpus: "2.0"
           memory: 512M
-    logging:
-      options:
-        max-size: "5m"
-        max-file: "3"

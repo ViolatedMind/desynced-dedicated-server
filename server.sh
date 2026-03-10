@@ -27,8 +27,8 @@ if [[ ! -f "$SERVER_EXE" ]]; then
   exit 3
 fi
 
-session_settings="{'name': '$SERVER_NAME', 'players':$MAX_PLAYERS, 'visibility': '$VISIBILITY', 'run_without_players': $RUN_WITHOUT_PLAYERS}"
-game_settings="{'resource_richness': $RESOURCE_RICHNESS, 'blight_threshold': $BLIGHT_THRESHOLD, 'plateau_level': $PLATEAU_LEVEL, 'peaceful': $PEACEFUL_MODE}"
+session_settings="{'name': '$SERVER_NAME', 'players':$MAX_PLAYERS, 'visibility': '$VISIBILITY', 'run_without_players': $RUN_WITHOUT_PLAYERS, 'mode': '$MODE', 'allow_faction_switch': $ALLOW_FACTION_SWITCHING, 'password': '$PASSWORD', 'block_unlocked_behaviors': $BLOCK_UNLOCKED_BEHAVIORS, 'disable_client_save': $DISABLE_CLIENT_SAVE}"
+game_settings="{'seed': $SEED, 'elevation_prams_freq': $ELEVATION_FREQ, 'elevation_prams_scale': $ELEVATION_SCALE, 'landscape': '$LANDSCAPE', 'resource_amt': $RESOURCE_AMT, 'resource_inf': $RESOURCE_INF, 'enable_day_night': $DAY_NIGHT, 'day_period': $DAY_PERIOD, 'year_period': $YEAR_PERIOD, 'blight_threshold': $BLIGHT_THRESHOLD, 'difficulty': $DIFFICULTY, 'creep': $CREEP, 'disable_minigames': $DISABLE_MINIGAMES, 'plateau_level': $PLATEAU_LEVEL, 'peaceful': $PEACEFUL_MODE}"
 
 xvfb-run -a \
   wine $INSTALL_PATH/Desynced/Binaries/Win64/DesyncedServer.exe \
