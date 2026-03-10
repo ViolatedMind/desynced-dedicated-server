@@ -31,8 +31,8 @@ services:
         CREEP: true                                   #Enable bug hive evolution (true, false)
         DISABLE_MINIGAMES: false                      #Disable minigames (true, false)
     ports:
-      - 10099:10099/udp                 #Main game port
-      - 27015:27015                     #Steam query port
+      - 10099:10099/udp                               #Main game port
+      - 27015:27015                                   #Steam query port
     volumes:
       - ./server:/desynced/server
       - ./cache:/root/.wine
