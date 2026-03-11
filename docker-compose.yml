@@ -1,6 +1,6 @@
 services:
   desynced:
-    image: violatedmind/desynced-server/latest
+    image: violatedmind/desynced-server:latest
     container_name: desynced-server
     restart: unless-stopped
     environment:
