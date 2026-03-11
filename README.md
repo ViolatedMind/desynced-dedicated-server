@@ -4,6 +4,10 @@ This is dockerized version of [Desynced](https://store.steampowered.com/app/1450
 ## Explanation
 While the server is console application it is yet to create a tray window - thats why I have used xvfb to simulate xserver and wine over wineconsole.
 
+## Docker Compose
+The docker compose is available [here](https://github.com/ViolatedMind/desynced-dedicated-server/blob/master/docker-compose.yml).
+The docker compose is already populated with all the default values for the environments.
+
 ## Configuration
 These are the session_settings and game_settings for the server.
 
